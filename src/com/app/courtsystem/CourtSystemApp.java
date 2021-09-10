@@ -6,7 +6,7 @@ public class CourtSystemApp {
 	int a[] = new int[100], i = 1, fr, nd, si, pr, sw;
 	int z[] = new int[7];
 	int r[] = new int[4];
-	String s;
+	String userName;
 	Scanner sc = new Scanner(System.in);
 
 	void create() {
@@ -15,7 +15,7 @@ public class CourtSystemApp {
 		System.out.println("::Create::");
 		System.out.print("Enter your name:");
 		sc.nextLine();
-		s = sc.nextLine();
+		userName = sc.nextLine();
 
 		System.out.print("Enter your password in 5-digit:");
 		a[i] = sc.nextInt();
@@ -26,7 +26,7 @@ public class CourtSystemApp {
 		System.out.print("Enter your location/ city:");
 		sc.next();
 		c = sc.nextLine();
-		System.out.println("Your account is created.\nPlease login.");
+		System.out.println("Hello " + userName + "! Your account is created.\nPlease login.");
 		menu();
 	}
 
@@ -54,8 +54,8 @@ public class CourtSystemApp {
 				if (password == a[j]) {
 					options();
 				} else {
-					System.out.println("Your password is not correct");
-					System.exit(0);
+					System.out.println("Incorrect password.\nPlease try again!");
+					menu();
 				}
 			}
 			break;
@@ -96,7 +96,7 @@ public class CourtSystemApp {
 					System.out.println("1.Ram Jethmalani\n2.Fali Nariman\n3.KK Venugopal\n4.Gopal Subramaniam");
 				} else if (cstype == 2) {
 					System.out.println("::Criminal lawyers list near your place::");
-					System.out.println("1.B.Daniel\n2.Rhyan Ahmed\n3.D.Michael\n4.Charles B.Wagner\n");
+					System.out.println("1.Shanti Bhushan\n2.Majid Memon\n3.Ujjwal Nikam\n4.L. Nageswara Rao\n");
 				} else {
 					System.out.println("Invalid option");
 
@@ -110,6 +110,7 @@ public class CourtSystemApp {
 					op = sc.nextInt();
 					if (op != 1) {
 						y = 1;
+						menu();
 					}
 				}
 			}
@@ -124,9 +125,11 @@ public class CourtSystemApp {
 	void options() {
 		int op;
 		int q = 0;
+		Hearings hearings = new Hearings();
 		while (q != 1) {
+			System.out.println("Hello " + userName + "!");
 			System.out.println("::Here are the options for your case::");
-			System.out.println("1.Submit proofs\n2.Fill a case \n3.Court fees\n4.Logout");
+			System.out.println("1.Submit proofs\n2.Fill a case \n3.Court fees\n4.Hearings\n5.Logout");
 			op = sc.nextInt();
 			switch (op) {
 			case 1:
@@ -136,11 +139,13 @@ public class CourtSystemApp {
 				fillacase();
 				break;
 			case 3:
-				courtfees();
+				courtFees();
 				break;
 			case 4:
+				hearings.hearings();
+				break;
+			case 5:
 				System.out.println("You have logged out succesfully.");
-//				System.exit(0);
 				q = 1;
 				menu();
 				break;
@@ -180,7 +185,7 @@ public class CourtSystemApp {
 		System.out.println("Case filed.");
 	}
 
-	void courtfees() {
+	void courtFees() {
 		int f;
 		int u = 0;
 		while (u != 1) {
