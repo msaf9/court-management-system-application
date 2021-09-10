@@ -26,7 +26,7 @@ public class CourtSystemApp {
 		System.out.print("Enter your location/ city:");
 		sc.next();
 		c = sc.nextLine();
-		System.out.println("Your account is created.\nPlease login again.");
+		System.out.println("Your account is created.\nPlease login.");
 		menu();
 	}
 
@@ -36,61 +36,64 @@ public class CourtSystemApp {
 		String name, msg, Email, city, lawyer;
 		System.out.println("::Here are the options for Court Case Management::");
 		int l = 0;
-		while (l != 1) {
-			System.out.println("1.Create Account\n2.Login\n3.Find a Lawyer\n4.Select Case Type\n5.Exit");
-			opt = sc.nextInt();
-			switch (opt) {
-			case 1:
-				create();
-				break;
-			case 2:
-				System.out.print("Please enter your name:");
-				sc.nextLine();
-				name = sc.nextLine();
-				System.out.print("Enter your password:");
-				password = sc.nextInt();
-				for (j = 1; j <= 100; j++) {
-					if (password == a[j]) {
-						options();
-					} else {
-						System.out.println("Your password is not correct");
-						System.exit(0);
-					}
+
+		System.out.println("1.Create Account\n2.Login\n3.Find a Lawyer\n4.Select Case Type\n5.Exit");
+		opt = sc.nextInt();
+		switch (opt) {
+		case 1:
+			create();
+			break;
+		case 2:
+			System.out.println("::Login::");
+			System.out.print("Please enter your name:");
+			sc.nextLine();
+			name = sc.nextLine();
+			System.out.print("Enter your password:");
+			password = sc.nextInt();
+			for (j = 1; j <= 100; j++) {
+				if (password == a[j]) {
+					options();
+				} else {
+					System.out.println("Your password is not correct");
+					System.exit(0);
 				}
-				break;
-			case 3:
-				while (conditionToLoop != 1) {
-					System.out.println("::Find a lawyer::");
-					System.out.println("1.Option 1 to continue\n2.Option 2 to Exit");
-					int choice = sc.nextInt();
+			}
+			break;
+		case 3:
+			while (conditionToLoop != 1) {
+				System.out.println("::Find a lawyer::");
+				System.out.println("1.Option 1 to continue\n2.Option 2 to Exit");
+				int choice = sc.nextInt();
 
-					if (choice == 1) {
-						System.out.println("::Provide your details::");
-						System.out.print("Enter your name: ");
-						sc.nextLine();
-						name = sc.nextLine();
-						System.out.print("Enter your message: ");
-						msg = sc.nextLine();
-						System.out.print("Enter your email id: ");
-						Email = sc.nextLine();
-						System.out.print("Enter your city: ");
-						city = sc.nextLine();
-						System.out.println("Thank you :)\nA lawyer will get back to you very soon.");
-					}
-
-					if (choice == 2) {
-						conditionToLoop = 1;
-					}
+				if (choice == 1) {
+					System.out.println("::Provide your details::");
+					System.out.print("Enter your name: ");
+					sc.nextLine();
+					name = sc.nextLine();
+					System.out.print("Enter your message: ");
+					msg = sc.nextLine();
+					System.out.print("Enter your email id: ");
+					Email = sc.nextLine();
+					System.out.print("Enter your city: ");
+					city = sc.nextLine();
+					System.out.println("Thank you :)\nA lawyer will get back to you very soon.");
 				}
 
-				break;
-			case 4:
+				if (choice == 2) {
+					conditionToLoop = 1;
+				}
+			}
+
+			break;
+		case 4:
+			int y = 0, op;
+			while (y != 1) {
 				System.out.println("::Select case type to find a lawyer::");
 				System.out.println("1.Civil case\n2.Criminal case");
 				cstype = sc.nextInt();
 				if (cstype == 1) {
 					System.out.println("::Civil lawyers list near your place::");
-					System.out.println("1.Jay H. Krieger\n2.Marcus J. Boire\n3.Antonio P.Raviele\n4.Megan F.Collony\n");
+					System.out.println("1.Ram Jethmalani\n2.Fali Nariman\n3.KK Venugopal\n4.Gopal Subramaniam");
 				} else if (cstype == 2) {
 					System.out.println("::Criminal lawyers list near your place::");
 					System.out.println("1.B.Daniel\n2.Rhyan Ahmed\n3.D.Michael\n4.Charles B.Wagner\n");
@@ -102,13 +105,18 @@ public class CourtSystemApp {
 					System.out.println("Select your lawyer");
 					sc.nextLine();
 					lawyer = sc.nextLine();
-					System.exit(0);
-					break;
+					System.out.println("We have saved your choice.\nThank you :)");
+					System.out.println("Select 1 to continue or 2 to exist");
+					op = sc.nextInt();
+					if (op != 1) {
+						y = 1;
+					}
 				}
-			case 5:
-				System.out.println("Thank you :)\nYou have exited the application.");
-				l = 1;
 			}
+			break;
+		case 5:
+			System.out.println("Thank you :)\nYou have exited the application.");
+			System.exit(0);
 		}
 
 	}
@@ -131,10 +139,11 @@ public class CourtSystemApp {
 				courtfees();
 				break;
 			case 4:
-				System.out.println("You have logged out succesfully");
+				System.out.println("You have logged out succesfully.");
 //				System.exit(0);
 				q = 1;
 				menu();
+				break;
 			}
 
 		}
@@ -142,7 +151,7 @@ public class CourtSystemApp {
 
 	void Submitproofs() {
 		int n;
-
+		System.out.println("::Submit proof::");
 		System.out.print("Number of proofs:");
 		n = sc.nextInt();
 
@@ -152,12 +161,13 @@ public class CourtSystemApp {
 			sc.nextLine();
 			proof[i] = sc.nextLine();
 		}
-		System.out.println("Proofs submitted");
+		System.out.println("Proof submitted.");
 
 	}
 
 	void fillacase() {
 		String plaintiff, defendant, courtn, complaint;
+		System.out.println("::File a case::");
 		System.out.print("Enter the plaintiff name:");
 		sc.nextLine();
 		plaintiff = sc.nextLine();
@@ -167,6 +177,7 @@ public class CourtSystemApp {
 		courtn = sc.nextLine();
 		System.out.print("Enter nature of complaint:");
 		complaint = sc.nextLine();
+		System.out.println("Case filed.");
 	}
 
 	void courtfees() {
@@ -178,19 +189,19 @@ public class CourtSystemApp {
 			f = sc.nextInt();
 			switch (f) {
 			case 1:
-				System.out.println("In case of plaint /written statement: Rs. 10/- only.");
+				System.out.println("In case of plaint /written statement is Rs. 10/- only.");
 				break;
 			case 2:
-				System.out.println("Value of suit exceeds Rs. 1,50,000 - 1,55,000 == Rs. 1700/-");
+				System.out.println("Value of suit exceeds Rs. 1,50,000 - 1,55,000 is Rs. 1700/- only.");
 				break;
 			case 3:
-				System.out.println("Value of suit exceeds Rs. 3,00,000 - 3,05,000 == Rs. 2450/-");
+				System.out.println("Value of suit exceeds Rs. 3,00,000 - 3,05,000 is Rs. 2450/- only.");
 				break;
 			case 4:
-				System.out.println("Value of suit exceeds Rs. 4,00,000 - 4,05,000 == Rs. 2950/-");
+				System.out.println("Value of suit exceeds Rs. 4,00,000 - 4,05,000 is Rs. 2950/- only.");
 				break;
 			case 5:
-				System.out.println("On a copy of a Decree or order == ( 50 paise )");
+				System.out.println("On a copy of a Decree or order is Rs. 0.50/- only.");
 				break;
 			case 6:
 				u = 1;
