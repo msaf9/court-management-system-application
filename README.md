@@ -1,8 +1,36 @@
 # Court Management System Application
+Design and development of real-time business ideas using object-oriented programming concepts.
 
-### About
-- Using this application, we can manage the entire Court System.
-- Features include file cases, find a lawyer, manage accounts, and others.
+## Table of contents
+1. Introduction
+2. Technologies
+3. Project status
+4. Installation
+5. License
 
-### Languages
+## Introduction
+Using this application, we can manage the entire Court System.
+
+### Features 
+Includes file cases, find a lawyer, manage accounts, and others.
+
+## Technologies
 - Java
+
+## Project status
+> **Completed**
+
+## Installation
+### Get repository
+```git
+git clone https://github.com/msaf9/CourtManagementSystemApplication.git
+cd CourtManagementSystemApplication
+```
+
+### Compile and run
+```java
+javac CourtMainApp.java
+java CourtMainApp
+```
+
+## License
