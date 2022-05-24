@@ -11,6 +11,12 @@ Design and development of real-time business ideas using object-oriented program
 ## Introduction
 Using this application, we can manage the entire Court System.
 
+### Course information
+- Course Name: Object Oriented Programming
+- Course Code: 15CS2002
+- Course Credits: 4
+- Academic Year: 2016
+
 ### Features 
 Includes file cases, find a lawyer, manage accounts, and others.
 
