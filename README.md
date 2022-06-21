@@ -1,12 +1,16 @@
 # Court Management System Application
 Design and development of real-time business ideas using object-oriented programming concepts.
 
-## Table of contents
-1. Introduction
-2. Technologies
-3. Project status
-4. Installation
-5. License
+- [Court Management System Application](#court-management-system-application)
+  - [Introduction](#introduction)
+    - [Course information](#course-information)
+    - [Features](#features)
+  - [Technologies](#technologies)
+  - [Project status](#project-status)
+  - [Installation](#installation)
+    - [Get repository](#get-repository)
+    - [Compile and run](#compile-and-run)
+  - [License](#license)
 
 ## Introduction
 Using this application, we can manage the entire Court System.
