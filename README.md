@@ -33,8 +33,8 @@ Includes file cases, find a lawyer, manage accounts, and others.
 ## Installation
 ### Get repository
 ```git
-git clone https://github.com/msaf9/CourtManagementSystemApplication.git
-cd CourtManagementSystemApplication
+git clone https://github.com/msaf9/court-management-system-application.git
+cd court-management-system-application
 ```
 
 ### Compile and run
