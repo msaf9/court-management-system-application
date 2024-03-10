@@ -1,16 +1,17 @@
-# Court Management System Application
+<h1>Court Management System Application</h1> 
 Design and development of real-time business ideas using object-oriented programming concepts.
 
-- [Court Management System Application](#court-management-system-application)
-  - [Introduction](#introduction)
-    - [Course information](#course-information)
-    - [Features](#features)
-  - [Technologies](#technologies)
-  - [Project status](#project-status)
-  - [Installation](#installation)
-    - [Get repository](#get-repository)
-    - [Compile and run](#compile-and-run)
-  - [License](#license)
+<h2>Table of contents</h2>
+
+- [Introduction](#introduction)
+  - [Course information](#course-information)
+  - [Features](#features)
+- [Programming Language](#programming-language)
+- [Project status](#project-status)
+- [Installation](#installation)
+  - [Get repository](#get-repository)
+  - [Compile and run](#compile-and-run)
+- [License](#license)
 
 ## Introduction
 Using this application, we can manage the entire Court System.
@@ -24,7 +25,7 @@ Using this application, we can manage the entire Court System.
 ### Features 
 Includes file cases, find a lawyer, manage accounts, and others.
 
-## Technologies
+## Programming Language
 - Java
 
 ## Project status
