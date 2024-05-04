@@ -45,3 +45,4 @@ java CourtMainApp
 ```
 
 ## License
+[MIT LICENSE](LICENSE)
